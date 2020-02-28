@@ -1,0 +1,11 @@
+$TTL    3600
+@       IN      SOA     ns.udx.cluster.internal. root.udx.cluster.internal. (
+                   2015101504           ; Serial
+                         3600           ; Refresh [1h]
+                          600           ; Retry   [10m]
+                        86400           ; Expire  [1d]
+                          600 )         ; Negative Cache TTL [1h]
+;
+@       IN      NS      ns.udx.cluster.internal.
+@		IN		DNAME	svc.cluster.local.
+ns      IN      A       X.X.X.X
