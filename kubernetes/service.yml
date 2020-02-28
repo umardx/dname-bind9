@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    cloud.google.com/load-balancer-type: Internal
+  labels:
+    app: dname
+  name: dname
+  namespace: kube-system
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Cluster
+  sessionAffinity: None
+  loadBalancerIP: 172.20.1.90
+  ports:
+  - name: dns
+    port: 53
+    protocol: UDP
+    targetPort: 53
+  selector:
+    app: dname
